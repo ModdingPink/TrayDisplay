@@ -12,9 +12,10 @@ class TrayApp : ApplicationContext
     {
         var menu = new ContextMenuStrip();
 
+        using var iconStream = typeof(TrayApp).Assembly.GetManifestResourceStream("TrayDisplay.Assets.icon.ico");
         trayIcon = new NotifyIcon
         {
-            Icon = File.Exists("Assets/icon.ico") ? new Icon("Assets/icon.ico") : SystemIcons.Application,
+            Icon = iconStream != null ? new Icon(iconStream) : SystemIcons.Application,
             Text = "TrayDisplay",
             ContextMenuStrip = menu,
             Visible = true
