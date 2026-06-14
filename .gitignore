@@ -1,0 +1,12 @@
+# Build output
+bin/
+obj/
+
+# User-specific VS/Rider files
+.vs/
+.idea/
+*.user
+*.suo
+
+# dotnet
+*.DotSettings.user
